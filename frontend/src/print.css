@@ -1,0 +1,228 @@
+/* ClearTerm AI - Professional A4 Print & PDF Stylesheet */
+
+@page {
+  size: A4 portrait;
+  margin: 10mm 12mm 12mm 12mm;
+}
+
+@media screen {
+  .audit-print-only {
+    display: none !important;
+  }
+}
+
+@media print {
+  /* Hide non-printable screen elements */
+  header,
+  aside,
+  nav,
+  .print-hidden,
+  .toast-container,
+  button.print-hidden,
+  a.print-hidden {
+    display: none !important;
+  }
+
+  .audit-print-only {
+    display: block !important;
+  }
+
+  /* Unconstrain body and root layout containers */
+  html,
+  body,
+  #root,
+  .app-layout-root,
+  .app-layout-body,
+  .app-layout-main,
+  .app-layout-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+  }
+
+  /* Document root print sheet */
+  .audit-report-page,
+  .audit-print-sheet {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 8.5pt !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Toolbar adjustments */
+  .audit-print-toolbar {
+    display: none !important;
+  }
+
+  /* Section Spacing & Page Break Controls */
+  .audit-print-section {
+    margin-top: 4.5mm !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  /* Section Headings MUST NEVER separate from the following content */
+  h1,
+  h2,
+  h3,
+  h4,
+  .audit-print-section-header,
+  .audit-print-title {
+    break-after: avoid-page !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Elements that MUST NEVER split internally across a page */
+  tr,
+  .audit-print-finding,
+  .audit-print-evidence,
+  .audit-print-summary,
+  .audit-print-verdict-banner,
+  .audit-print-ambiguity-box,
+  .audit-print-metadata,
+  .audit-print-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Structured comparison table styling for A4 */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: auto !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  tbody tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  th,
+  td {
+    padding: 2.2mm 2.5mm !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+    font-size: 8pt !important;
+    line-height: 1.3 !important;
+  }
+
+  th {
+    background-color: #f1f5f9 !important;
+    color: #003087 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    border-top: 1px solid #94a3b8 !important;
+    border-bottom: 1.5px solid #003087 !important;
+  }
+
+  /* Executive Summary Grid: 3 columns fit side-by-side */
+  .audit-print-summary-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 2.5mm !important;
+    margin-top: 3.5mm !important;
+    margin-bottom: 3.5mm !important;
+  }
+
+  .audit-print-summary {
+    padding: 2.5mm 3mm !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 1.5mm !important;
+    background-color: #f8fafc !important;
+  }
+
+  /* Verdict Hero Banner */
+  .audit-print-verdict-banner {
+    padding: 3mm 4mm !important;
+    border-radius: 2mm !important;
+    margin-top: 3.5mm !important;
+    margin-bottom: 3.5mm !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Evidence cards in print */
+  .audit-print-evidence {
+    padding: 2.5mm 3mm !important;
+    margin-top: 2mm !important;
+    border-radius: 1.5mm !important;
+    font-size: 8pt !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Badges print clarity */
+  .audit-print-badge,
+  .badge {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0.5mm 2mm !important;
+    border-radius: 1mm !important;
+    font-size: 7.5pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.03em !important;
+  }
+
+  /* Color adjustments for print */
+  .text-brand-navy {
+    color: #003087 !important;
+  }
+
+  .text-brand-primary {
+    color: #0070e0 !important;
+  }
+
+  .bg-brand-navy {
+    background-color: #003087 !important;
+    color: #ffffff !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  /* Footer metadata */
+  .audit-print-metadata {
+    margin-top: 4.5mm !important;
+    padding-top: 2.5mm !important;
+    border-top: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+    font-size: 7.5pt !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Prevent widows and orphans */
+  p,
+  blockquote,
+  li {
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+
+  /* Hide old artificial pagination elements */
+  .audit-print-continuation-title,
+  .audit-print-continuation {
+    display: none !important;
+  }
+}
